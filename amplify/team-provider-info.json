@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-visitchicago-dev-164250-authRole",
+      "UnauthRoleArn": "arn:aws:iam::054904437243:role/amplify-visitchicago-dev-164250-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::054904437243:role/amplify-visitchicago-dev-164250-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-visitchicago-dev-164250-deployment",
+      "UnauthRoleName": "amplify-visitchicago-dev-164250-unauthRole",
+      "StackName": "amplify-visitchicago-dev-164250",
+      "StackId": "arn:aws:cloudformation:us-east-1:054904437243:stack/amplify-visitchicago-dev-164250/a04d7670-6ada-11ee-b397-0a5ced7f1535",
+      "AmplifyAppId": "d9l92cnr84zpq"
+    }
+  }
+}
