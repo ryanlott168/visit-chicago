@@ -10,6 +10,20 @@
       "StackName": "amplify-visitchicago-dev-164250",
       "StackId": "arn:aws:cloudformation:us-east-1:054904437243:stack/amplify-visitchicago-dev-164250/a04d7670-6ada-11ee-b397-0a5ced7f1535",
       "AmplifyAppId": "d9l92cnr84zpq"
+    },
+    "categories": {
+      "api": {
+        "visitchicago": {}
+      },
+      "auth": {
+        "visitchicago71d203dc": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d9l92cnr84zpq",
+          "type": "manual"
+        }
+      }
     }
   }
 }
