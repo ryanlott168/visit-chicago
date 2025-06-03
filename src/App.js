@@ -112,5 +112,5 @@ const styles = {
   },
 };
 
-//export default App;
+// This component is exported wrapped in withAuthenticator below
 export default withAuthenticator(App);
