@@ -63,13 +63,13 @@ const App = ({ signOut, user }) => {
         placeholder="Name"
         onChange={(event) => setInput("name", event.target.value)}
         style={styles.input}
-        defaultValue={formState.name}
+        value={formState.name}
       />
       <TextField
         placeholder="Description"
         onChange={(event) => setInput("description", event.target.value)}
         style={styles.input}
-        defaultValue={formState.description}
+        value={formState.description}
       />
       <Button style={styles.button} onClick={addTodo}>
         Create Todo
