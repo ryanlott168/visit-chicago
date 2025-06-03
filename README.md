@@ -1,6 +1,38 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and [AWS Amplify](https://docs.amplify.aws/).
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) installed on your machine.
+- [Amplify CLI](https://docs.amplify.aws/cli) installed globally:
+
+```bash
+npm install -g @aws-amplify/cli
+```
+
+Before interacting with Amplify you will need valid AWS credentials configured. The easiest way is to run:
+
+```bash
+aws configure
+```
+
+or follow the Amplify CLI documentation for additional options.
+
+## Setup
+
+Install dependencies and pull the Amplify backend configuration which generates `src/aws-exports.js`:
+
+```bash
+npm install
+amplify pull
+```
+
+Once the configuration files have been created you can start the development server:
+
+```bash
+npm start
+```
 
 ## Available Scripts
 
