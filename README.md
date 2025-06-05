@@ -13,6 +13,8 @@ To persist admin data, a small Express server is included. Start it with:
 - `npm run server`
 
 It stores credentials in `db.json`, which you can host online if desired.
+The server uses CORS so you may set `CLIENT_ORIGIN` to the URL of the React
+app (default `http://localhost:3000`).
 
 ## Admin Access
 

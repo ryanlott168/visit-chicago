@@ -5,7 +5,13 @@ const path = require('path');
 const crypto = require('crypto');
 
 const app = express();
-app.use(cors());
+const allowedOrigin = process.env.CLIENT_ORIGIN || 'http://localhost:3000';
+app.use(
+  cors({
+    origin: allowedOrigin,
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 const DB_FILE = path.join(__dirname, 'db.json');
