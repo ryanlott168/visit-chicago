@@ -50,3 +50,14 @@ export async function resetAdminPassword(email) {
   });
   return data.newPassword;
 }
+
+export async function getPlaces() {
+  return request('/places', { method: 'GET' });
+}
+
+export async function addPlace(place) {
+  return request('/places', {
+    method: 'POST',
+    body: JSON.stringify(place),
+  });
+}

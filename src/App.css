@@ -209,3 +209,17 @@ header {
   cursor: pointer;
   border-radius: 4px;
 }
+
+.food-container {
+  display: flex;
+  gap: 10px;
+}
+
+.food-map {
+  width: 60%;
+}
+
+.food-info {
+  width: 40%;
+  overflow-y: auto;
+}
