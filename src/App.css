@@ -117,20 +117,33 @@ header {
 }
 
 .card {
-  background: var(--gray2);
+  position: relative;
   border-radius: 8px;
+  overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  padding: 20px;
-  text-align: left;
-}
-
-.card h2 {
-  color: var(--navy2);
-  margin-top: 0;
 }
 
 .card img {
+  display: block;
   width: 100%;
-  border-radius: 6px;
-  margin-bottom: 10px;
+}
+
+.card-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 12px 16px;
+  background: rgba(228, 228, 231, 0.85);
+  text-align: left;
+}
+
+.card-text h2 {
+  color: var(--navy2);
+  margin: 0 0 4px;
+}
+
+.card-text p {
+  color: var(--navy1);
+  margin: 0;
 }
