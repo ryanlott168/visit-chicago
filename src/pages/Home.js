@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Home() {
+export default function Home({ setPage }) {
   return (
     <div className="page">
       <div
@@ -20,7 +20,7 @@ export default function Home() {
       </div>
 
       <div className="cards">
-        <div className="card">
+        <div className="card" onClick={() => setPage('restaurants')}>
           <img
             src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60"
             alt="Chicago food"
@@ -31,18 +31,18 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="card">
+        <div className="card" onClick={() => setPage('sites')}>
           <img
             src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60"
             alt="Chicago sites"
           />
           <div className="card-text">
-            <h2>Sites</h2>
+            <h2>Attractions</h2>
             <p>Visit landmarks like Millennium Park and the Art Institute.</p>
           </div>
         </div>
 
-        <div className="card">
+        <div className="card" onClick={() => setPage('nightlife')}>
           <img
             src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60"
             alt="Chicago nightlife"
@@ -53,13 +53,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="card">
+        <div className="card" onClick={() => setPage('facts')}>
           <img
             src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60"
             alt="Chicago facts"
           />
           <div className="card-text">
-            <h2>Interesting Facts</h2>
+            <h2>City Facts</h2>
             <p>Discover quirky trivia that makes Chicago unique.</p>
           </div>
         </div>
