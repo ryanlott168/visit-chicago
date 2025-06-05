@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Home from './pages/Home';
 import Restaurants from './pages/Restaurants';
 import TouristSites from './pages/TouristSites';
 import Nightlife from './pages/Nightlife';
 import InterestingFacts from './pages/InterestingFacts';
+import AdminLogin from './pages/AdminLogin';
+import AdminSetup from './pages/AdminSetup';
+import ResetPassword from './pages/ResetPassword';
 
 const pages = {
   home: Home,
@@ -16,7 +19,37 @@ const pages = {
 
 export default function App() {
   const [page, setPage] = useState('home');
+  const [isAdmin, setIsAdmin] = useState(
+    () => localStorage.getItem('isAdmin') === 'true'
+  );
+  const adminData = JSON.parse(localStorage.getItem('adminData') || 'null');
   const CurrentPage = pages[page];
+
+  useEffect(() => {
+    // keep path consistent after sign in/out
+    if (!isAdmin && window.location.pathname === '/admin') {
+      // stay on /admin to show login
+    } else if (isAdmin && window.location.pathname === '/admin') {
+      // admin mode stays on /admin
+    }
+  }, [isAdmin]);
+
+  if (window.location.pathname.startsWith('/admin') && !isAdmin) {
+    if (!adminData) {
+      return (
+        <AdminSetup
+          onSetup={() => {
+            setIsAdmin(true);
+            window.history.pushState(null, '', '/admin');
+          }}
+        />
+      );
+    }
+    if (window.location.pathname === '/admin/reset') {
+      return <ResetPassword />;
+    }
+    return <AdminLogin onLogin={() => setIsAdmin(true)} />;
+  }
 
   return (
     <div className="App">
@@ -64,6 +97,18 @@ export default function App() {
       <main>
         <CurrentPage />
       </main>
+      {isAdmin && (
+        <div className="admin-badge">
+          Admin
+          <button className="signout" onClick={() => {
+            localStorage.removeItem('isAdmin');
+            setIsAdmin(false);
+            window.history.pushState(null, '', '/');
+          }}>
+            Sign Out
+          </button>
+        </div>
+      )}
     </div>
   );
 }
