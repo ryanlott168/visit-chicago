@@ -21,6 +21,17 @@ header {
 .site-title {
   margin: 0;
   color: var(--blue2);
+  border-top: 4px solid var(--blue2);
+  border-bottom: 4px solid var(--blue2);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+}
+
+.flag-star {
+  color: var(--burnt2);
+  font-size: 1.2rem;
 }
 
 .nav {
