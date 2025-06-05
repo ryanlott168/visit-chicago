@@ -8,6 +8,7 @@ import InterestingFacts from './pages/InterestingFacts';
 import AdminLogin from './pages/AdminLogin';
 import AdminSetup from './pages/AdminSetup';
 import ResetPassword from './pages/ResetPassword';
+import AddPlace from './pages/AddPlace';
 import { adminExists as checkAdminExists } from './utils/api';
 
 const pages = {
@@ -61,6 +62,10 @@ export default function App() {
       return <ResetPassword />;
     }
     return <AdminLogin onLogin={() => setIsAdmin(true)} />;
+  }
+
+  if (isAdmin && window.location.pathname === '/admin/add') {
+    return <AddPlace />;
   }
 
   return (

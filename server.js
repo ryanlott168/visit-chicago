@@ -20,7 +20,7 @@ function readDB() {
   try {
     return JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
   } catch (err) {
-    return { admin: null };
+    return { admin: null, places: [] };
   }
 }
 
@@ -74,6 +74,20 @@ app.post('/api/reset', (req, res) => {
   } else {
     res.status(404).json({ error: 'Email not found' });
   }
+});
+
+app.get('/api/places', (req, res) => {
+  const data = readDB();
+  res.json(data.places || []);
+});
+
+app.post('/api/places', (req, res) => {
+  const data = readDB();
+  if (!data.places) data.places = [];
+  const place = { ...req.body, id: Date.now() };
+  data.places.push(place);
+  writeDB(data);
+  res.json({ success: true, id: place.id });
 });
 
 const port = process.env.PORT || 4000;
