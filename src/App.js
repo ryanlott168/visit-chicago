@@ -21,7 +21,13 @@ export default function App() {
   return (
     <div className="App">
       <header>
-        <h1 className="site-title">Chicago Guide</h1>
+        <h1 className="site-title">
+          <span className="flag-star">✶</span>
+          <span className="flag-star">✶</span>
+          Chicago Guide
+          <span className="flag-star">✶</span>
+          <span className="flag-star">✶</span>
+        </h1>
         <nav className="nav">
           <button
             className={page === 'home' ? 'active' : ''}
