@@ -14,7 +14,7 @@ header {
   box-sizing: border-box;
   z-index: 10;
   margin-bottom: 10px;
-  background: rgba(11, 22, 42, 0.8);
+  background: var(--navy1);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -38,6 +38,12 @@ header {
   transition: color 0.3s, font-weight 0.3s;
 }
 
+.nav button.active {
+  font-weight: 600;
+  color: var(--blue2);
+  border-bottom: 2px solid var(--blue2);
+}
+
 .nav button:hover {
   font-weight: 600;
   color: var(--burnt2);
@@ -45,6 +51,24 @@ header {
 
 .page {
   padding: 20px;
+}
+
+.page h1 {
+  color: var(--burnt1);
+  margin-top: 0;
+}
+
+.page ul {
+  list-style: none;
+  padding: 0;
+}
+
+.page li {
+  background: var(--gray2);
+  border: 1px solid var(--gray1);
+  border-radius: 4px;
+  padding: 6px 10px;
+  margin-bottom: 8px;
 }
 
 .hero-section {
@@ -98,6 +122,11 @@ header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   padding: 20px;
   text-align: left;
+}
+
+.card h2 {
+  color: var(--navy2);
+  margin-top: 0;
 }
 
 .card img {
