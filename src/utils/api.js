@@ -1,11 +1,16 @@
 const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:4000/api';
 
 async function request(path, options) {
-  const res = await fetch(`${API_BASE}${path}`, {
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'include',
-    ...options,
-  });
+  let res;
+  try {
+    res = await fetch(`${API_BASE}${path}`, {
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      ...options,
+    });
+  } catch (err) {
+    throw new Error('Network error');
+  }
   if (!res.ok) {
     const data = await res.json().catch(() => ({}));
     throw new Error(data.error || 'Request failed');
@@ -15,8 +20,13 @@ async function request(path, options) {
 }
 
 export async function adminExists() {
-  const data = await request('/admin', { method: 'GET' });
-  return data.exists;
+  try {
+    const data = await request('/admin', { method: 'GET' });
+    return data.exists;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
 }
 
 export async function setupAdmin(user) {
