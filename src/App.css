@@ -5,9 +5,7 @@
 }
 
 header {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -15,6 +13,7 @@ header {
   padding: 15px 30px;
   box-sizing: border-box;
   z-index: 10;
+  margin-bottom: 10px;
   background: rgba(11, 22, 42, 0.8);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
