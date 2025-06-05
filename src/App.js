@@ -107,7 +107,8 @@ export default function App() {
         </nav>
       </header>
       <main>
-        <CurrentPage />
+        {/* pass setPage to allow Home cards to navigate */}
+        <CurrentPage setPage={setPage} />
       </main>
       {isAdmin && (
         <div className="admin-badge">
