@@ -7,7 +7,7 @@ export default function Home() {
         className="hero-section"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=60')",
+            "url('https://b777290.smushcdn.com/777290/wp-content/uploads/2020/08/iStock-1141114423-scaled.jpg?lossy=1&strip=1&webp=1')",
         }}
       >
         <div className="hero-text">

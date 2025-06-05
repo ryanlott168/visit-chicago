@@ -21,13 +21,13 @@ export default function App() {
   return (
     <div className="App">
       <header>
-        <h1 className="site-title">Visit Chicago</h1>
+        <h1 className="site-title">Chicago Guide</h1>
         <nav className="nav">
           <button onClick={() => setPage('home')}>Home</button>
-          <button onClick={() => setPage('restaurants')}>Restaurants</button>
-          <button onClick={() => setPage('sites')}>Tourist Sites</button>
+          <button onClick={() => setPage('restaurants')}>Food</button>
+          <button onClick={() => setPage('sites')}>Attractions</button>
           <button onClick={() => setPage('nightlife')}>Nightlife</button>
-          <button onClick={() => setPage('facts')}>Interesting Facts</button>
+          <button onClick={() => setPage('facts')}>City Facts</button>
         </nav>
       </header>
       <main>
