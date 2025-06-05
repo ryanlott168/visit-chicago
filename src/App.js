@@ -20,13 +20,16 @@ export default function App() {
 
   return (
     <div className="App">
-      <nav className="nav">
-        <button onClick={() => setPage('home')}>Home</button>
-        <button onClick={() => setPage('restaurants')}>Restaurants</button>
-        <button onClick={() => setPage('sites')}>Tourist Sites</button>
-        <button onClick={() => setPage('nightlife')}>Nightlife</button>
-        <button onClick={() => setPage('facts')}>Interesting Facts</button>
-      </nav>
+      <header>
+        <h1 className="site-title">Visit Chicago</h1>
+        <nav className="nav">
+          <button onClick={() => setPage('home')}>Home</button>
+          <button onClick={() => setPage('restaurants')}>Restaurants</button>
+          <button onClick={() => setPage('sites')}>Tourist Sites</button>
+          <button onClick={() => setPage('nightlife')}>Nightlife</button>
+          <button onClick={() => setPage('facts')}>Interesting Facts</button>
+        </nav>
+      </header>
       <main>
         <CurrentPage />
       </main>
