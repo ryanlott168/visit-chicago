@@ -23,11 +23,36 @@ export default function App() {
       <header>
         <h1 className="site-title">Chicago Guide</h1>
         <nav className="nav">
-          <button onClick={() => setPage('home')}>Home</button>
-          <button onClick={() => setPage('restaurants')}>Food</button>
-          <button onClick={() => setPage('sites')}>Attractions</button>
-          <button onClick={() => setPage('nightlife')}>Nightlife</button>
-          <button onClick={() => setPage('facts')}>City Facts</button>
+          <button
+            className={page === 'home' ? 'active' : ''}
+            onClick={() => setPage('home')}
+          >
+            Home
+          </button>
+          <button
+            className={page === 'restaurants' ? 'active' : ''}
+            onClick={() => setPage('restaurants')}
+          >
+            Food
+          </button>
+          <button
+            className={page === 'sites' ? 'active' : ''}
+            onClick={() => setPage('sites')}
+          >
+            Attractions
+          </button>
+          <button
+            className={page === 'nightlife' ? 'active' : ''}
+            onClick={() => setPage('nightlife')}
+          >
+            Nightlife
+          </button>
+          <button
+            className={page === 'facts' ? 'active' : ''}
+            onClick={() => setPage('facts')}
+          >
+            City Facts
+          </button>
         </nav>
       </header>
       <main>

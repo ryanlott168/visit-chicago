@@ -25,35 +25,43 @@ export default function Home() {
             src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60"
             alt="Chicago food"
           />
-          <h2>Food</h2>
-          <p>Sample iconic deep-dish pizza, hot dogs, and diverse cuisine.</p>
+          <div className="card-text">
+            <h2>Food</h2>
+            <p>Sample iconic deep-dish pizza, hot dogs, and diverse cuisine.</p>
+          </div>
         </div>
 
         <div className="card">
           <img
-            src="https://images.unsplash.com/photo-1486663845017-b7302c7d067d?auto=format&fit=crop&w=800&q=60"
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60"
             alt="Chicago sites"
           />
-          <h2>Sites</h2>
-          <p>Visit landmarks like Millennium Park and the Art Institute.</p>
+          <div className="card-text">
+            <h2>Sites</h2>
+            <p>Visit landmarks like Millennium Park and the Art Institute.</p>
+          </div>
         </div>
 
         <div className="card">
           <img
-            src="https://images.unsplash.com/photo-1524760830983-93f53aee37b1?auto=format&fit=crop&w=800&q=60"
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60"
             alt="Chicago nightlife"
           />
-          <h2>Nightlife</h2>
-          <p>Experience live music, rooftop bars, and clubs after dark.</p>
+          <div className="card-text">
+            <h2>Nightlife</h2>
+            <p>Experience live music, rooftop bars, and clubs after dark.</p>
+          </div>
         </div>
 
         <div className="card">
           <img
-            src="https://images.unsplash.com/photo-1502590464430-1af6001f5212?auto=format&fit=crop&w=800&q=60"
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60"
             alt="Chicago facts"
           />
-          <h2>Interesting Facts</h2>
-          <p>Discover quirky trivia that makes Chicago unique.</p>
+          <div className="card-text">
+            <h2>Interesting Facts</h2>
+            <p>Discover quirky trivia that makes Chicago unique.</p>
+          </div>
         </div>
       </div>
     </div>
