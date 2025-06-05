@@ -33,3 +33,18 @@
   border-radius: 8px;
   margin-top: 20px;
 }
+
+.chicago-title {
+  display: inline-block;
+  border-top: 6px solid #6ca0dc;
+  border-bottom: 6px solid #6ca0dc;
+  padding: 10px 20px;
+  margin: 0;
+}
+
+.chicago-title .star {
+  color: #ff0000;
+  margin: 0 8px;
+  font-size: 1.4em;
+  line-height: 1;
+}
