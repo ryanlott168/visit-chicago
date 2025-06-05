@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { hashPassword } from '../utils/auth';
+import { setupAdmin } from '../utils/api';
 
 export default function AdminSetup({ onSetup }) {
   const [username, setUsername] = useState('');
@@ -13,13 +13,13 @@ export default function AdminSetup({ onSetup }) {
       setError('All fields are required');
       return;
     }
-    const passwordHash = await hashPassword(password);
-    localStorage.setItem(
-      'adminData',
-      JSON.stringify({ username, email, passwordHash })
-    );
-    localStorage.setItem('isAdmin', 'true');
-    onSetup();
+    try {
+      await setupAdmin({ username, email, password });
+      localStorage.setItem('isAdmin', 'true');
+      onSetup();
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (

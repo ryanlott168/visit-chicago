@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { hashPassword, generateRandomPassword } from '../utils/auth';
+import { resetAdminPassword } from '../utils/api';
 
 export default function ResetPassword() {
   const [email, setEmail] = useState('');
@@ -7,17 +7,11 @@ export default function ResetPassword() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const admin = JSON.parse(localStorage.getItem('adminData'));
-    if (admin && admin.email === email) {
-      const newPassword = generateRandomPassword();
-      const passwordHash = await hashPassword(newPassword);
-      localStorage.setItem(
-        'adminData',
-        JSON.stringify({ ...admin, passwordHash })
-      );
+    try {
+      const newPassword = await resetAdminPassword(email);
       setMessage(`New password: ${newPassword}`);
-    } else {
-      setMessage('Email not found');
+    } catch (err) {
+      setMessage(err.message);
     }
   };
 

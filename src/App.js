@@ -8,6 +8,7 @@ import InterestingFacts from './pages/InterestingFacts';
 import AdminLogin from './pages/AdminLogin';
 import AdminSetup from './pages/AdminSetup';
 import ResetPassword from './pages/ResetPassword';
+import { adminExists as checkAdminExists } from './utils/api';
 
 const pages = {
   home: Home,
@@ -22,8 +23,16 @@ export default function App() {
   const [isAdmin, setIsAdmin] = useState(
     () => localStorage.getItem('isAdmin') === 'true'
   );
-  const adminData = JSON.parse(localStorage.getItem('adminData') || 'null');
+  const [adminExistsState, setAdminExistsState] = useState(null);
   const CurrentPage = pages[page];
+
+  useEffect(() => {
+    async function check() {
+      const exists = await checkAdminExists();
+      setAdminExistsState(exists);
+    }
+    check();
+  }, []);
 
   useEffect(() => {
     // keep path consistent after sign in/out
@@ -35,7 +44,10 @@ export default function App() {
   }, [isAdmin]);
 
   if (window.location.pathname.startsWith('/admin') && !isAdmin) {
-    if (!adminData) {
+    if (adminExistsState === null) {
+      return <p>Loading...</p>;
+    }
+    if (!adminExistsState) {
       return (
         <AdminSetup
           onSetup={() => {

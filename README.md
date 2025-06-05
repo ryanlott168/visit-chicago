@@ -8,12 +8,20 @@ A simple React site showcasing Chicago for visitors. The app includes pages for 
 - `npm test` – run tests (none are provided)
 - `npm run build` – build for production
 
+To persist admin data, a small Express server is included. Start it with:
+
+- `npm run server`
+
+It stores credentials in `db.json`, which you can host online if desired.
+
 ## Admin Access
 
-Visit `/admin` in the browser. If no admin account exists, you will be prompted
-to create one by providing a username, email, and password. Credentials are
-stored in `localStorage`.
+Visit `/admin` in the browser. The app queries a small API server to determine
+whether an admin account already exists. If none is found you will be prompted
+to create one by providing a username, email, and password. The API persists
+this data in a simple database. When an account exists, the `/admin` page shows
+a login form. Forgotten passwords can be reset via the "Forgot Password?" link,
+which verifies the registered email and returns a newly generated password.
 
-If an account already exists, the `/admin` page presents a login form. Forgotten
-passwords can be reset via the "Forgot Password?" link, which requires the
-registered email and generates a new random password.
+By default the client expects the API at `http://localhost:4000/api`. You can
+change this by setting `REACT_APP_API_URL` in an `.env` file.

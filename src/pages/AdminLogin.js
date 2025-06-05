@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { hashPassword } from '../utils/auth';
+import { loginAdmin } from '../utils/api';
 
 export default function AdminLogin({ onLogin }) {
   const [username, setUsername] = useState('');
@@ -8,17 +8,14 @@ export default function AdminLogin({ onLogin }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const admin = JSON.parse(localStorage.getItem('adminData'));
-    if (admin) {
-      const hash = await hashPassword(password);
-      if (username === admin.username && hash === admin.passwordHash) {
-        localStorage.setItem('isAdmin', 'true');
-        setError('');
-        onLogin();
-        return;
-      }
+    try {
+      await loginAdmin(username, password);
+      localStorage.setItem('isAdmin', 'true');
+      setError('');
+      onLogin();
+    } catch (err) {
+      setError('Invalid credentials');
     }
-    setError('Invalid credentials');
   };
 
   return (
